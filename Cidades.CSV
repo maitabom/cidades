@@ -1,34 +1,34 @@
-Estado;Municipio;Valor
-AM;Manaus;5
-AM;Parintins;13
-BA;Feira de Santana;8
-BA;Jequi�;11
-BA;Salvador;9
-BA;Teixeira de Freitas;4
-BA;Vit�ria da Conquista;7
-ES;Cachoeiro de Itapemirim;3
-ES;Vit�ria;5
-MG;Belo Horizonte;5
-MG;Governador Valadares;11
-MG;Montes Claros;4
-MG;Pouso Alegre;4
-MG;Uberl�ndia;1
-MG;Vi�osa;3
-PR;Curitiba;1
-PR;Foz do Igua�u;2
-PR;Londrina;3
-PR;Pato Branco;4
-RJ;Barra Mansa;4
-RJ;Cabo Frio;10
-RJ;Niter�i;6
-RJ;Petr�polis;6
-RJ;Rio de Janeiro;8
-RS;Montenegro;3
-RS;Porto Alegre;8
-SC;Brusque;2
-SC;Chapec�;4
-SC;Florian�polis;3
-SC;Joinville;5
-SP;Campinas;3
-SP;Santos;8
-SP;S�o Paulo;5
+Estado,Município,Valor
+AM,Manaus,5
+AM,Parintins,13
+BA,Feira de Santana,8
+BA,Jequié,11
+BA,Salvador,9
+BA,Teixeira de Freitas,4
+BA,Vitória da Conquista,7
+ES,Cachoeiro de Itapemirim,3
+ES,Vitória,5
+MG,Belo Horizonte,5
+MG,Governador Valadares,11
+MG,Montes Claros,4
+MG,Pouso Alegre,4
+MG,Uberlândia,1
+MG,Viçosa,3
+PR,Curitiba,1
+PR,Foz do Iguaçu,2
+PR,Londrina,3
+PR,Pato Branco,4
+RJ,Barra Mansa,4
+RJ,Cabo Frio,10
+RJ,Niterói,6
+RJ,Petrópolis,6
+RJ,Rio de Janeiro,8
+RS,Montenegro,3
+RS,Porto Alegre,8
+SC,Brusque,2
+SC,Chapecó,4
+SC,Florianópolis,3
+SC,Joinville,5
+SP,Campinas,3
+SP,Santos,8
+SP,São Paulo,5
