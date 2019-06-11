@@ -22,11 +22,23 @@ $(document).ready(function () {
     });
   });
 
-  carregarDados();
+  $.ajax({
+    type: "GET",
+    url: "cidades.csv",
+    dataType: "text",
+    success: function(data) {
+      carregarDados(data);
+    }
+  });
 });
 
-function carregarDados() {
+function carregarDados(data) {
+    
+    
+    
+    /*
     setTimeout(function (){
         $('#preloader').fadeOut('slow');
     }, 2000);
+    */
 }
