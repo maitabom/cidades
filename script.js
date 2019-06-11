@@ -33,12 +33,13 @@ $(document).ready(function () {
 });
 
 function carregarDados(data) {
+    var lines = data.split(/\r?\n/);
+    var dados = [];
+
+    for(var i = 1; i < lines.lenght; i++)
+    {
+        
+    }
     
-    
-    
-    /*
-    setTimeout(function (){
-        $('#preloader').fadeOut('slow');
-    }, 2000);
-    */
+    $('#preloader').fadeOut('slow');
 }
