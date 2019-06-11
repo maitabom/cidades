@@ -1,0 +1,28 @@
+[
+    {
+        "estado": "MG",
+        "cidades": [
+            {
+                "cidade": "Belo Horizonte",
+                "valor": 4.0
+            },
+            {
+                "cidade": "Contagem",
+                "valor": 4.0
+            }
+        ]
+    },
+    {
+        "estado": "RJ",
+        "cidades": [
+            {
+                "cidade": "Rio de Janeiro",
+                "valor": 4.0
+            },
+            {
+                "cidade": "Nova Iguaçu",
+                "valor": 4.0
+            }
+        ]
+    }
+]
