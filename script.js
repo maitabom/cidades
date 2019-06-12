@@ -22,7 +22,7 @@ $(document).ready(function () {
     });
   });
 
-  $("#estados li a").on('click', function(){
+  $("#estados li a").on('click', function () {
     var nomeEstado = $(this).html();
     var sigla = $(this).attr('href').replace('#', '');
     atualizarComboCidades(sigla, nomeEstado);
@@ -40,31 +40,43 @@ $(document).ready(function () {
     dataType: "text",
     success: function (data) {
       carregarDados(data);
+
+      if (window.location.hash != "") {
+        var hash = window.location.hash;
+        var nomeEstado = obterNomeEstado(hash);
+        var sigla = hash.replace('#', '')
+        atualizarComboCidades(sigla, nomeEstado);
+      }
     }
   });
 });
 
+function obterNomeEstado(hash) {
+  var opcao = $("#estados li a[href='" + hash + "']");
+  return opcao.html();
+}
+
 function atualizarComboCidades(sigla, nomeEstado) {
   var cidades = new ColecaoCidades();
-    
-    cidades.dataBind();
-    $("#cidade").empty();
-    
-    var estado = cidades.obterEstado(sigla.toUpperCase());
-    var blank = new Option('', '', false, false);
-    $("#cidade").append(blank);
-    estado.cidades.forEach(function(e){
-      var option = new Option(e.nome, e.nome, false, false);
-      $("#cidade").append(option);
-    });
 
-    $('#nome_estado').html(nomeEstado);
+  cidades.dataBind();
+  $("#cidade").empty();
 
-    $('#presentation').fadeOut();
-    $('#form').fadeIn();
+  var estado = cidades.obterEstado(sigla.toUpperCase());
+  var blank = new Option('', '', false, false);
+  $("#cidade").append(blank);
+  estado.cidades.forEach(function (e) {
+    var option = new Option(e.nome, e.nome, false, false);
+    $("#cidade").append(option);
+  });
 
-    $('#sidebar').removeClass('active');
-    $('.overlay').removeClass('active');
+  $('#nome_estado').html(nomeEstado);
+
+  $('#presentation').fadeOut();
+  $('#form').fadeIn();
+
+  $('#sidebar').removeClass('active');
+  $('.overlay').removeClass('active');
 }
 
 function carregarDados(data) {
