@@ -51,3 +51,7 @@ ColecaoCidades.prototype.sort = function (recursive = true) {
 ColecaoCidades.prototype.save = function () {
     window.sessionStorage.setItem('data', JSON.stringify(this.estados));
 }
+
+ColecaoCidades.prototype.dataBind = function(){
+    this.estados = JSON.parse(window.sessionStorage.getItem('data'));
+}
