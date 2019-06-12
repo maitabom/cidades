@@ -22,6 +22,18 @@ $(document).ready(function () {
     });
   });
 
+  $("#estados li a").on('click', function(){
+    var nomeEstado = $(this).html();
+    var sigla = $(this).attr('href').replace('#', '');
+    atualizarComboCidades(sigla, nomeEstado);
+  });
+
+  $("#cidade").select2({
+    width: '50%',
+    height: '20px',
+    placeholder: 'Clique aqui para selecionar um município'
+  });
+
   $.ajax({
     type: "GET",
     url: "cidades.csv",
@@ -31,6 +43,29 @@ $(document).ready(function () {
     }
   });
 });
+
+function atualizarComboCidades(sigla, nomeEstado) {
+  var cidades = new ColecaoCidades();
+    
+    cidades.dataBind();
+    $("#cidade").empty();
+    
+    var estado = cidades.obterEstado(sigla.toUpperCase());
+    var blank = new Option('', '', false, false);
+    $("#cidade").append(blank);
+    estado.cidades.forEach(function(e){
+      var option = new Option(e.nome, e.nome, false, false);
+      $("#cidade").append(option);
+    });
+
+    $('#nome_estado').html(nomeEstado);
+
+    $('#presentation').fadeOut();
+    $('#form').fadeIn();
+
+    $('#sidebar').removeClass('active');
+    $('.overlay').removeClass('active');
+}
 
 function carregarDados(data) {
   var lines = data.split(/\r?\n/);
