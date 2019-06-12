@@ -74,6 +74,12 @@ function atualizarComboCidades(sigla, nomeEstado) {
   $("#cidade").empty();
 
   var estado = cidades.obterEstado(sigla.toUpperCase());
+
+  if(estado == null) {
+    alert('Não existem cidades cadastradas pra este estado');
+    return;
+  }
+
   var blank = new Option('', '', false, false);
   $("#cidade").append(blank);
   estado.cidades.forEach(function (e) {
