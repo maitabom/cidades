@@ -184,6 +184,19 @@ div.card {
     height: 75vh;
 }
 
+#valor {
+    height: 50% !important;
+    width: 30%;
+    margin: 50px auto;
+    color: white;
+}
+
+#valor .card-text {
+    font-size: 5em;
+    color: white;
+    font-weight: bold;
+}
+
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
