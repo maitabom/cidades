@@ -34,6 +34,10 @@ $(document).ready(function () {
     placeholder: 'Clique aqui para selecionar um município'
   });
 
+  $("#cidade").on("select2:select", function(e){
+    exibirValor($(this).find(':selected').text(), $(this).val());
+  });
+
   $.ajax({
     type: "GET",
     url: "cidades.csv",
@@ -56,6 +60,13 @@ function obterNomeEstado(hash) {
   return opcao.html();
 }
 
+function exibirValor(cidade, valor) {
+  $('#valor .card-header').html(cidade);
+  $('#valor .card-text').html(Number.parseFloat(valor).toFixed(1).toLocaleString('pt-BR') + "%");
+  
+  $('#valor').fadeIn('slow');
+}
+
 function atualizarComboCidades(sigla, nomeEstado) {
   var cidades = new ColecaoCidades();
 
@@ -66,7 +77,7 @@ function atualizarComboCidades(sigla, nomeEstado) {
   var blank = new Option('', '', false, false);
   $("#cidade").append(blank);
   estado.cidades.forEach(function (e) {
-    var option = new Option(e.nome, e.nome, false, false);
+    var option = new Option(e.nome, e.valor, false, false);
     $("#cidade").append(option);
   });
 
@@ -74,6 +85,7 @@ function atualizarComboCidades(sigla, nomeEstado) {
 
   $('#presentation').fadeOut();
   $('#form').fadeIn();
+  $('#valor').hide();
 
   $('#sidebar').removeClass('active');
   $('.overlay').removeClass('active');
