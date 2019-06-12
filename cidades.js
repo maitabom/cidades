@@ -34,6 +34,10 @@ ColecaoCidades.prototype.adicionarCidade = function (sigla, cidade) {
     }
 }
 
+ColecaoCidades.prototype.obterEstado = function(sigla) {
+    return this.estados.find(u => u.sigla == sigla);
+}
+
 ColecaoCidades.prototype.sort = function (recursive = true) {
     this.estados.sort(function (a, b) {
         if (a.sigla > b.sigla) return 1;
